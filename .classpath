@@ -2,7 +2,7 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="deb/jars/jython.jar"/>
-	<classpathentry kind="lib" path="deb/jars/lwjgl.jar"/>
+	<classpathentry kind="lib" path="dep/jars/jython.jar"/>
+	<classpathentry kind="lib" path="dep/jars/lwjgl.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
