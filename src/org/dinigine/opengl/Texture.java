@@ -10,10 +10,6 @@ import org.lwjgl.opengl.GL30;
 
 public class Texture {
 
-	public static final int MAX_SIZE = GL11.glGetInteger(GL11.GL_MAX_TEXTURE_SIZE);
-
-	private static final ByteBuffer imageLoadingBuffer = Buffers.newByteBuffer((MAX_SIZE * MAX_SIZE) << 2);
-
 	private int width;
 	private int height;
 	private int texture;
@@ -22,8 +18,9 @@ public class Texture {
 		this.width = decoder.getWidth();
 		this.height = decoder.getHeight();
 		
-		decoder.decode(imageLoadingBuffer);
-		imageLoadingBuffer.position(0);
+		ByteBuffer pixels = Buffers.newByteBuffer((width * height) << 2);
+		decoder.decode(pixels);
+		pixels.position(0);
 
 		this.texture = VideoResources.createTexture();
 		GL11.glBindTexture(GL11.GL_TEXTURE_2D, texture);
@@ -32,7 +29,7 @@ public class Texture {
 		GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_WRAP_S, GL11.GL_REPEAT);
 		GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_WRAP_T, GL11.GL_REPEAT);
 		GL11.glTexImage2D(GL11.GL_TEXTURE_2D, 0, GL11.GL_RGBA, width, height, 0,
-				GL11.GL_RGBA, GL11.GL_UNSIGNED_BYTE, imageLoadingBuffer);
+				GL11.GL_RGBA, GL11.GL_UNSIGNED_BYTE, pixels);
 		GL30.glGenerateMipmap(GL11.GL_TEXTURE_2D);
 	}
 
