@@ -4,8 +4,6 @@ import java.io.PrintStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import org.dinigine.util.Hacks;
-
 /**
  * @author Robert Myers
  */
@@ -120,10 +118,10 @@ public final class Log {
 		}
 
 		buf.append("Stack:");
-		int depth = Hacks.getStackDepth(root);
-		for (int i = 0; i < depth; i++) {
+		StackTraceElement[] stack = root.getStackTrace();
+		for (int i = 0; i < stack.length; i++) {
 			buf.append("\n(").append(i).append(") ");
-			buf.append(Hacks.getElementInStack(root, i));
+			buf.append(stack[i]);
 		}
 
 		out.println(buf);

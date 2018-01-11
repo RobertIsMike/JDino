@@ -2,7 +2,22 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="dep/jars/jython.jar"/>
-	<classpathentry kind="lib" path="dep/jars/lwjgl.jar"/>
+	<classpathentry kind="lib" path="dep/jython/jython.jar"/>
+	<classpathentry kind="lib" path="dep/lwjgl3/lwjgl-glfw-natives-linux.jar"/>
+	<classpathentry kind="lib" path="dep/lwjgl3/lwjgl-glfw-natives-macos.jar"/>
+	<classpathentry kind="lib" path="dep/lwjgl3/lwjgl-glfw-natives-windows.jar"/>
+	<classpathentry kind="lib" path="dep/lwjgl3/lwjgl-glfw.jar"/>
+	<classpathentry kind="lib" path="dep/lwjgl3/lwjgl-natives-linux.jar"/>
+	<classpathentry kind="lib" path="dep/lwjgl3/lwjgl-natives-macos.jar"/>
+	<classpathentry kind="lib" path="dep/lwjgl3/lwjgl-natives-windows.jar"/>
+	<classpathentry kind="lib" path="dep/lwjgl3/lwjgl-openal-natives-linux.jar"/>
+	<classpathentry kind="lib" path="dep/lwjgl3/lwjgl-openal-natives-macos.jar"/>
+	<classpathentry kind="lib" path="dep/lwjgl3/lwjgl-openal-natives-windows.jar"/>
+	<classpathentry kind="lib" path="dep/lwjgl3/lwjgl-openal.jar"/>
+	<classpathentry kind="lib" path="dep/lwjgl3/lwjgl-opengl-natives-linux.jar"/>
+	<classpathentry kind="lib" path="dep/lwjgl3/lwjgl-opengl-natives-macos.jar"/>
+	<classpathentry kind="lib" path="dep/lwjgl3/lwjgl-opengl-natives-windows.jar"/>
+	<classpathentry kind="lib" path="dep/lwjgl3/lwjgl-opengl.jar"/>
+	<classpathentry kind="lib" path="dep/lwjgl3/lwjgl.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

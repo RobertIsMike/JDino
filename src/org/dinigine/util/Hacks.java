@@ -6,8 +6,6 @@ import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.StringSelection;
 import java.awt.datatransfer.Transferable;
 
-import sun.misc.SharedSecrets;
-
 /**
  * @author Robert Myers
  */
@@ -16,14 +14,16 @@ public final class Hacks {
 	/** Static only */
 	private Hacks() {}
 
-	/**
+	/** 
 	 * @param e
 	 *            - the throwable
 	 * @return The number of elements in the stack trace (or 0 if the stack
 	 *         trace is unavailable)
 	 */
+	@Deprecated
 	public static int getStackDepth(Throwable e) {
-		return SharedSecrets.getJavaLangAccess().getStackTraceDepth(e);
+		/*return SharedSecrets.getJavaLangAccess().getStackTraceDepth(e);*/
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -36,8 +36,10 @@ public final class Hacks {
 	 * @throws IndexOutOfBoundsException
 	 *             if {@code index < 0 || index >= getStackDepth()}
 	 */
+	@Deprecated
 	public static StackTraceElement getElementInStack(Throwable e, int index) {
-		return SharedSecrets.getJavaLangAccess().getStackTraceElement(e, index);
+		/*	return SharedSecrets.getJavaLangAccess().getStackTraceElement(e, index);*/
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -45,15 +47,17 @@ public final class Hacks {
 	 * @param frames
 	 * @return
 	 */
+	@Deprecated
 	public static Class<?> getCallerClass(int frames) {
-		StackTraceElement element = getCallerElement(frames + 1);
+		/*StackTraceElement element = getCallerElement(frames + 1);
 
 		try {
 			return element == null ? null : Class.forName(element.getClassName());
 		}
 		catch (ClassNotFoundException e) {
 			throw new InternalError("Stack generated faulty element: " + element);
-		}
+		}*/
+		throw new UnsupportedOperationException();
 	}
 
 	/**
